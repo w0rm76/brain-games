@@ -1,0 +1,19 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "qa-auto projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/w0rm76/qa-auto-engineer-javascript-project-44.git"
+  },
+  "author": "w0rm76",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/w0rm76/qa-auto-engineer-javascript-project-44/issues"
+  },
+  "homepage": "https://github.com/w0rm76/qa-auto-engineer-javascript-project-44#readme"
+}
