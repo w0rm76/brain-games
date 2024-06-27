@@ -17,7 +17,7 @@ const playBrainEven = () => {
   console.log(`Hello, ${name}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  for (let i = 1; i <= 3; i + 1) {
+  for (let i = 1; i <= 3; i++) {
     const result = isEven();
     if (result[0]) {
       console.log('Correct!');
