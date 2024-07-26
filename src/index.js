@@ -3,6 +3,7 @@ import playBrainCalc from './games/brain-calc.js';
 import playBrainEven from './games/brain-even.js';
 import playBrainGcd from './games/brain-gcd.js';
 import playBrainProgression from './games/brain-progression.js';
+import playBrainPrime from './games/brain-prime.js';
 
 const showRules = (gameName) => {
   switch (gameName) {
@@ -17,6 +18,9 @@ const showRules = (gameName) => {
       break;
     case 'brain-progression':
       console.log('What number is missing in the progression?');
+      break;
+    case 'brain-prime':
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
       break;
     default:
       console.log('Sorry, we have an error');
@@ -33,6 +37,8 @@ const playNewRound = (gameName) => {
       return playBrainGcd();
     case 'brain-progression':
       return playBrainProgression();
+    case 'brain-prime':
+      return playBrainPrime();
     default:
       return console.log('Sorry, we have an error');
   }
