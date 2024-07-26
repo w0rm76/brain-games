@@ -22,12 +22,12 @@ const showRules = (gameName) => {
 const playNewRound = (gameName) => {
   switch (gameName) {
     case 'brain-even':
-      //console.log('we are at playNewRound -> brain-even');
+      // console.log('we are at playNewRound -> brain-even');
       return playBrainEven();
     case 'brain-calc':
       return playBrainCalc();
     case 'brain-gcd':
-        return playBrainGcd();
+      return playBrainGcd();
     default:
       return console.log('Sorry, we have an error');
   }
@@ -43,7 +43,7 @@ const playBrainGames = (gameName) => {
 
   for (let i = 1; i <= 3; i += 1) {
     const result = playNewRound(gameName);
-    //console.log('result', result);
+    // console.log('result', result);
     if (result[0]) {
       console.log('Correct!');
     } else {
