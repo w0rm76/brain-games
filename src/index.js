@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import playBrainCalc from './games/brain-calc.js';
 import playBrainEven from './games/brain-even.js';
+import playBrainGcd from './games/brain-gcd.js';
 
 const showRules = (gameName) => {
   switch (gameName) {
@@ -10,6 +11,9 @@ const showRules = (gameName) => {
     case 'brain-calc':
       console.log('What is the result of the expression?');
       break;
+    case 'brain-gcd':
+      console.log('Find the greatest common divisor of given numbers.');
+      break;
     default:
       console.log('Sorry, we have an error');
   }
@@ -18,10 +22,12 @@ const showRules = (gameName) => {
 const playNewRound = (gameName) => {
   switch (gameName) {
     case 'brain-even':
-      console.log('we are at playNewRound -> brain-even');
+      //console.log('we are at playNewRound -> brain-even');
       return playBrainEven();
     case 'brain-calc':
       return playBrainCalc();
+    case 'brain-gcd':
+        return playBrainGcd();
     default:
       return console.log('Sorry, we have an error');
   }
