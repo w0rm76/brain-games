@@ -37,7 +37,7 @@ const playBrainGames = (gameName) => {
 
   for (let i = 1; i <= 3; i += 1) {
     const result = playNewRound(gameName);
-    console.log('result', result);
+    //console.log('result', result);
     if (result[0]) {
       console.log('Correct!');
     } else {
