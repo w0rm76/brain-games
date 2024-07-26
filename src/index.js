@@ -22,7 +22,6 @@ const showRules = (gameName) => {
 const playNewRound = (gameName) => {
   switch (gameName) {
     case 'brain-even':
-      // console.log('we are at playNewRound -> brain-even');
       return playBrainEven();
     case 'brain-calc':
       return playBrainCalc();
@@ -34,7 +33,6 @@ const playNewRound = (gameName) => {
 };
 
 const playBrainGames = (gameName) => {
-  // greeting
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -43,7 +41,6 @@ const playBrainGames = (gameName) => {
 
   for (let i = 1; i <= 3; i += 1) {
     const result = playNewRound(gameName);
-    // console.log('result', result);
     if (result[0]) {
       console.log('Correct!');
     } else {

@@ -2,7 +2,6 @@ import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
 const playBrainGcd = () => {
-  // console.log('playBrainGcd');
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   let realAnswer = 1;
@@ -17,7 +16,6 @@ const playBrainGcd = () => {
   const result = (parseInt(userAnswer, 10) === realAnswer)
     ? [true, realAnswer, userAnswer]
     : [false, realAnswer, userAnswer];
-    // console.log(result);
   return result;
 };
 

@@ -3,4 +3,4 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/e8fd0d8a2d3946dca88a/maintainability)](https://codeclimate.com/github/w0rm76/qa-auto-engineer-javascript-project-44/maintainability)
 
-[![asciicast](https://asciinema.org/a/669701.svg)](https://asciinema.org/a/669701)
+[![asciicast](https://asciinema.org/a/669706.svg)](https://asciinema.org/a/669706)
