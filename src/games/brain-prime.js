@@ -7,7 +7,6 @@ const playBrainPrime = () => {
 
   for (let i = 2; i <= Math.sqrt(number) && realAnswer === 'yes'; i += 1) {
     realAnswer = (number % i === 0) ? 'no' : 'yes';
-    console.log(`realAnswer is ${realAnswer}`);
   }
 
   console.log(`Question: ${number}`);
