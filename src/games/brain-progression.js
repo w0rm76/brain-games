@@ -23,7 +23,7 @@ const playBrainProgression = () => {
 
   const realAnswer = progression[missingPosition - 1];
 
-  return [rules, stringQuestionProgression, realAnswer];
+  return { rules, stringQuestionProgression, realAnswer };
 };
 
 gameEngine(playBrainProgression);

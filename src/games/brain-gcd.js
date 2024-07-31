@@ -13,7 +13,7 @@ const playBrainGcd = () => {
     }
   }
   const question = `${number1} ${number2}`;
-  return [rules, question, realAnswer];
+  return { rules, question, realAnswer };
 };
 
 gameEngine(playBrainGcd);

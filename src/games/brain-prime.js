@@ -11,7 +11,7 @@ const playBrainPrime = () => {
   }
 
   const question = number;
-  return [rules, question, realAnswer];
+  return { rules, question, realAnswer };
 };
 
 gameEngine(playBrainPrime);

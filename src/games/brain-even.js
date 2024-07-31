@@ -5,7 +5,7 @@ const playBrainEven = () => {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
   const question = getRandomNumber();
   const realAnswer = question % 2 === 0 ? 'yes' : 'no';
-  return [rules, question, realAnswer];
+  return { rules, question, realAnswer };
 };
 
 gameEngine(playBrainEven);

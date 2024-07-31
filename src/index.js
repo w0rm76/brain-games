@@ -4,15 +4,17 @@ const gameEngine = (runGame) => {
   const ROUNDS = 3;
 
   const showRules = () => {
-    console.log(runGame()[0]);
+    console.log(runGame().rules);
   };
 
   const generateRound = () => {
-    const [rules, question, realAnswer] = runGame();
+    const { rules, question, realAnswer } = runGame();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const isCorrect = (realAnswer.toString() === userAnswer.toString());
-    return [rules, question, isCorrect, realAnswer, userAnswer];
+    return {
+      rules, question, isCorrect, realAnswer, userAnswer,
+    };
   };
 
   // greeting
@@ -25,7 +27,7 @@ const gameEngine = (runGame) => {
 
   // run game
   for (let i = 1; i <= ROUNDS; i += 1) {
-    const [rules, question, isCorrect, realAnswer, userAnswer] = generateRound();
+    const { isCorrect, realAnswer, userAnswer } = generateRound();
     if (isCorrect) {
       console.log('Correct!');
     } else {

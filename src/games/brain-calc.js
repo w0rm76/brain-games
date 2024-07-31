@@ -26,7 +26,7 @@ const playBrainCalc = () => {
       break;
   }
   const question = `${number1} ${operation} ${number2}`;
-  return [rules, question, realAnswer];
+  return { rules, question, realAnswer };
 };
 
 gameEngine(playBrainCalc);
