@@ -1,15 +1,13 @@
-import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
+import gameEngine from '../index.js';
 
 const playBrainEven = () => {
-  // console.log('playBrainEven');
-  const number = getRandomNumber();
-  const realAnswer = number % 2 === 0 ? 'yes' : 'no';
-  console.log(`Question: ${number}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  const result = (realAnswer === userAnswer) ? [true, realAnswer, userAnswer]
-    : [false, realAnswer, userAnswer];
-  return result;
+  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const question = getRandomNumber();
+  const realAnswer = question % 2 === 0 ? 'yes' : 'no';
+  return [rules, question, realAnswer];
 };
+
+gameEngine(playBrainEven);
 
 export default playBrainEven;

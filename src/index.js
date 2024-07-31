@@ -1,62 +1,35 @@
 import readlineSync from 'readline-sync';
-import playBrainCalc from './games/brain-calc.js';
-import playBrainEven from './games/brain-even.js';
-import playBrainGcd from './games/brain-gcd.js';
-import playBrainProgression from './games/brain-progression.js';
-import playBrainPrime from './games/brain-prime.js';
 
-const showRules = (gameName) => {
-  switch (gameName) {
-    case 'brain-even':
-      console.log('Answer "yes" if the number is even, otherwise answer "no".');
-      break;
-    case 'brain-calc':
-      console.log('What is the result of the expression?');
-      break;
-    case 'brain-gcd':
-      console.log('Find the greatest common divisor of given numbers.');
-      break;
-    case 'brain-progression':
-      console.log('What number is missing in the progression?');
-      break;
-    case 'brain-prime':
-      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-      break;
-    default:
-      console.log('Sorry, we have an error');
-  }
-};
+const gameEngine = (runGame) => {
+  const ROUNDS = 3;
 
-const playNewRound = (gameName) => {
-  switch (gameName) {
-    case 'brain-even':
-      return playBrainEven();
-    case 'brain-calc':
-      return playBrainCalc();
-    case 'brain-gcd':
-      return playBrainGcd();
-    case 'brain-progression':
-      return playBrainProgression();
-    case 'brain-prime':
-      return playBrainPrime();
-    default:
-      return console.log('Sorry, we have an error');
-  }
-};
+  const showRules = () => {
+    console.log(runGame()[0]);
+  };
 
-const playBrainGames = (gameName) => {
+  const generateRound = () => {
+    const [rules, question, realAnswer] = runGame();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    const isCorrect = (realAnswer.toString() === userAnswer.toString());
+    return [rules, question, isCorrect, realAnswer, userAnswer];
+  };
+
+  // greeting
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  showRules(gameName);
+  // show rules
+  showRules();
 
-  for (let i = 1; i <= 3; i += 1) {
-    const result = playNewRound(gameName);
-    if (result[0]) {
+  // run game
+  for (let i = 1; i <= ROUNDS; i += 1) {
+    const [rules, question, isCorrect, realAnswer, userAnswer] = generateRound();
+    if (isCorrect) {
       console.log('Correct!');
     } else {
-      console.log(`'${result[2]}' is wrong answer ;(. Correct answer was '${result[1]}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${realAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
@@ -64,4 +37,4 @@ const playBrainGames = (gameName) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default playBrainGames;
+export default gameEngine;

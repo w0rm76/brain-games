@@ -1,7 +1,8 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const playBrainProgression = () => {
+  const rules = 'What number is missing in the progression?';
   const progressionLength = getRandomNumber(5, 10); // fix length could be set =10
   const missingPosition = getRandomNumber(1, progressionLength);
   let progressionElement = getRandomNumber();
@@ -22,12 +23,9 @@ const playBrainProgression = () => {
 
   const realAnswer = progression[missingPosition - 1];
 
-  console.log(`Question: ${stringQuestionProgression}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  const result = (parseInt(userAnswer, 10) === realAnswer)
-    ? [true, realAnswer, userAnswer]
-    : [false, realAnswer, userAnswer];
-  return result;
+  return [rules, stringQuestionProgression, realAnswer];
 };
+
+gameEngine(playBrainProgression);
 
 export default playBrainProgression;

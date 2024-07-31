@@ -1,7 +1,8 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const playBrainPrime = () => {
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const number = getRandomNumber();
   let realAnswer = 'yes';
 
@@ -9,11 +10,10 @@ const playBrainPrime = () => {
     realAnswer = (number % i === 0) ? 'no' : 'yes';
   }
 
-  console.log(`Question: ${number}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  const result = (realAnswer === userAnswer) ? [true, realAnswer, userAnswer]
-    : [false, realAnswer, userAnswer];
-  return result;
+  const question = number;
+  return [rules, question, realAnswer];
 };
+
+gameEngine(playBrainPrime);
 
 export default playBrainPrime;

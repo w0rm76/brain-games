@@ -1,34 +1,34 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const playBrainCalc = () => {
+  const rules = 'What is the result of the expression?';
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const randomOperation = getRandomNumber(1, 3);
-  let expectedAnswer = null;
+  let realAnswer = null;
   let operation = null;
   switch (randomOperation) {
     case 1:
       operation = '+';
-      expectedAnswer = number1 + number2;
+      realAnswer = number1 + number2;
       break;
     case 2:
       operation = '-';
-      expectedAnswer = number1 - number2;
+      realAnswer = number1 - number2;
       break;
     case 3:
       operation = '*';
-      expectedAnswer = number1 * number2;
+      realAnswer = number1 * number2;
       break;
     default:
       console.log('Sorry, we have an error');
+      break;
   }
-  console.log(`Question: ${number1} ${operation} ${number2}`);
-  const actualAnswer = readlineSync.question('Your answer: ');
-  const result = (parseInt(actualAnswer, 10) === expectedAnswer)
-    ? [true, actualAnswer, expectedAnswer]
-    : [false, actualAnswer, expectedAnswer];
-  return result;
+  const question = `${number1} ${operation} ${number2}`;
+  return [rules, question, realAnswer];
 };
+
+gameEngine(playBrainCalc);
 
 export default playBrainCalc;
