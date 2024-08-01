@@ -3,7 +3,7 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const playBrainProgression = () => {
   const rules = 'What number is missing in the progression?';
-  const progressionLength = getRandomNumber(5, 10); // fix length could be set =10
+  const progressionLength = getRandomNumber(6, 10); // fix length could be set =10
   const missingPosition = getRandomNumber(1, progressionLength);
   let progressionElement = getRandomNumber();
   const progressionStep = getRandomNumber(1, 10);
