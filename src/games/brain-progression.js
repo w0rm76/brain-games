@@ -22,7 +22,7 @@ const playBrainProgression = () => {
   }
 
   const realAnswer = progression[missingPosition - 1];
-  const question = stringQuestionProgression;
+  const question = stringQuestionProgression.trim();
 
   return { rules, question, realAnswer };
 };
