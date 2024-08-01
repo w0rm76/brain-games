@@ -1,8 +1,9 @@
 import gameEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
+const rules = 'What is the result of the expression?';
+
 const playBrainCalc = () => {
-  const rules = 'What is the result of the expression?';
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const randomOperation = getRandomNumber(1, 3);
@@ -26,9 +27,9 @@ const playBrainCalc = () => {
       break;
   }
   const question = `${number1} ${operation} ${number2}`;
-  return { rules, question, realAnswer };
+  return { question, realAnswer };
 };
 
-gameEngine(playBrainCalc);
+gameEngine(rules, playBrainCalc);
 
 export default playBrainCalc;

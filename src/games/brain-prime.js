@@ -1,8 +1,9 @@
 import gameEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const playBrainPrime = () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const number = getRandomNumber();
   let realAnswer = 'yes';
 
@@ -11,9 +12,9 @@ const playBrainPrime = () => {
   }
 
   const question = number;
-  return { rules, question, realAnswer };
+  return { question, realAnswer };
 };
 
-gameEngine(playBrainPrime);
+gameEngine(rules, playBrainPrime);
 
 export default playBrainPrime;

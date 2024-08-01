@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
 
-const gameEngine = (runGame) => {
+const gameEngine = (rules, runGame) => {
   const ROUNDS = 3;
 
   const showRules = () => {
-    console.log(runGame().rules);
+    console.log(rules);
   };
 
   const generateRound = () => {
-    const { rules, question, realAnswer } = runGame();
+    const { question, realAnswer } = runGame();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const isCorrect = (realAnswer.toString() === userAnswer.toString());
     return {
-      rules, question, isCorrect, realAnswer, userAnswer,
+      question, isCorrect, realAnswer, userAnswer,
     };
   };
 

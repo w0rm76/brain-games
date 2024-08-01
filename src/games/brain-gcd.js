@@ -1,8 +1,9 @@
 import gameEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
+const rules = 'Find the greatest common divisor of given numbers.';
+
 const playBrainGcd = () => {
-  const rules = 'Find the greatest common divisor of given numbers.';
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   let realAnswer = 1;
@@ -13,9 +14,9 @@ const playBrainGcd = () => {
     }
   }
   const question = `${number1} ${number2}`;
-  return { rules, question, realAnswer };
+  return { question, realAnswer };
 };
 
-gameEngine(playBrainGcd);
+gameEngine(rules, playBrainGcd);
 
 export default playBrainGcd;

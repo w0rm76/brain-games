@@ -1,13 +1,14 @@
 import getRandomNumber from '../getRandomNumber.js';
 import gameEngine from '../index.js';
 
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const playBrainEven = () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
   const question = getRandomNumber();
   const realAnswer = question % 2 === 0 ? 'yes' : 'no';
-  return { rules, question, realAnswer };
+  return { question, realAnswer };
 };
 
-gameEngine(playBrainEven);
+gameEngine(rules, playBrainEven);
 
 export default playBrainEven;

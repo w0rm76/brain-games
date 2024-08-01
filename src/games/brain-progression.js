@@ -1,8 +1,9 @@
 import gameEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
+const rules = 'What number is missing in the progression?';
+
 const playBrainProgression = () => {
-  const rules = 'What number is missing in the progression?';
   const progressionLength = getRandomNumber(6, 10); // fix length could be set =10
   const missingPosition = getRandomNumber(1, progressionLength);
   let progressionElement = getRandomNumber();
@@ -24,9 +25,9 @@ const playBrainProgression = () => {
   const realAnswer = progression[missingPosition - 1];
   const question = stringQuestionProgression.trim();
 
-  return { rules, question, realAnswer };
+  return { question, realAnswer };
 };
 
-gameEngine(playBrainProgression);
+gameEngine(rules, playBrainProgression);
 
 export default playBrainProgression;
